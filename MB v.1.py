@@ -1,4 +1,4 @@
-# Go ahead and cry little boy
+
 
 # Livros guardados
 livro1 = {'autor':'Steve Hawkins','titulo':'Breves respostas para grandes questões','Disponibilidade':'Disponivel'}
