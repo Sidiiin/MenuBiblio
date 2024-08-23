@@ -1,4 +1,3 @@
-# Go ahead and cry little boy <--- Letra da musica que eu estava escutando no momento 0 quando começei a programar)
 #datetime serve para usar data e hora do sistema como referencia para os dias
 from datetime import datetime
 import csv
