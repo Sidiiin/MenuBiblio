@@ -1,4 +1,4 @@
-#datetime serve para usar data e hora do sistema como referencia para os dias
+#datetime serve para usar data e hora do sistema como referencia para os dias.
 from datetime import datetime
 import csv
 
