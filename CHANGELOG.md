@@ -11,3 +11,4 @@
 - Substituição de dicionários e listas em Python por um banco de dados relacional.
 - Adicionado ao repositório um arquivo de texto `requirements.txt` com os requisitos necessários para o programa funcionar. Todos os pacotes podem ser instalados através do `pip`.
 - Implementada a funcionalidade de conexão com o banco de dados, criação de tabelas e cadastro de alunos.
+- Em breve trarei mais atualizações.
