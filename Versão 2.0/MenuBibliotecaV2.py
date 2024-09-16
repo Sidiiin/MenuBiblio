@@ -48,6 +48,8 @@ def criar_tabelas():
     conexao.close()
 
 # Agora vamos as funções
+
+#Função para cadastrar um aluno
 def cadastrar_aluno():
     """Função para cadastrar um novo aluno."""
     conexao, cursor = conectar_banco()
@@ -59,6 +61,41 @@ def cadastrar_aluno():
     cursor.execute(sql, valores)
     conexao.commit()
 
+#Função para cadastrar um livro
+def cadastrar_livro():
+    """Função para cadastrar um novo livro."""
+    conexao, cursor = conectar_banco()
+    
+    livro_temporario = input('Insira o nome do livro a ser cadastrado: ')
+    autor_temporario = input('Insira o nome do autor do livro a ser cadastrado: ')
+    sql = "INSERT INTO livroscadastrados (titulo, autor, disponibilidade) VALUES (%s,%s,1);"
+    valores = (livro_temporario,autor_temporario)
+    
+    cursor.execute(sql, valores)
+    conexao.commit()
+
+#Função para listar os livros
+def listar_livros():
+    """Função para cadastrar um novo aluno."""
+    conexao, cursor = conectar_banco()
+    
+    sql = "SELECT * FROM livroscadastrados WHERE disponibilidade = 1"
+    
+    cursor.execute(sql)
+    livros = cursor.fetchall()
+    if livros:
+        print("Livros disponíveis:")
+        for livro in livros:
+            print(f"Título: {livro[1]}, Escrito por {livro[2]}")
+    else:
+        print("Nenhum livro disponível.")
+    
+    cursor.close()
+    conexao.close()
+
+
+
+
 # Criar as tabelas para o programa
 criar_tabelas()
 
@@ -69,6 +106,9 @@ while True:
     print('╠══════════════════════════════════════════╣')
     print('║   Qual dos nossos serviços deseja usar?  ║')
     print('╠══════════════════════════════════════════╣')
+    print('║ 1 - Listar livros Disponiveis            ║')
+    print('║ 1 - xxxxx                                ║')
+    print('║ 1 - xxxxx                                ║')
     print('║ 1 - xxxxx                                ║')
     print('╠══════════════════════════════════════════╣')
     print('║           Apenas funcionários            ║')
@@ -86,10 +126,11 @@ while True:
     
     # Chamada das funções
     if controle_do_menu == 2:
-        # Função para cadastrar um livro (não implementada ainda)
-        pass
+        cadastrar_livro()
     elif controle_do_menu == 3:
         cadastrar_aluno()
+    elif controle_do_menu == 1:
+        listar_livros()
     else:
         print("Opção não implementada ou inválida.")
     
